@@ -1,0 +1,401 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { CharacterProfile, TransmediaFormat, GlossaryTerm, ToolItem, SavedProject } from "./types";
+
+export const CHARACTERS: CharacterProfile[] = [
+  {
+    id: "Wirün",
+    name: "Wirün",
+    tagline: "El Ancla del Campo",
+    avatarEmoji: "👴🏾",
+    color: "#eab308", // Amber
+    archetype: "Sabiduría Corporal / Coherencia del Campo",
+    roleDescription: "El practicante más antiguo. Transmite presencia estable. Su función mística es sostener la frecuencia grupal alta ante la adversidad. En la app introduce la ética profunda y citas del Rantu-Mapu."
+  },
+  {
+    id: "Küpü",
+    name: "Küpü",
+    tagline: "La Torsión Intelectual",
+    avatarEmoji: "🧑🏽",
+    color: "#ef4444", // Red
+    archetype: "Inteligencia sin Ética / Alerta Tecnológica",
+    roleDescription: "El practicante más dotado en lectura sensorial pura. Incurrió en el descuido de leer el dolor y los secretos de sus compañeros cayendo en la torsión egoica. Encarna el uso iratento del conocimiento sin valores humanos."
+  },
+  {
+    id: "Amaru",
+    name: "Amaru",
+    tagline: "La Observadora Autocrítica",
+    avatarEmoji: "👩🏽",
+    color: "#8b5cf6", // Purple
+    archetype: "Metacognición / Honestidad Radical",
+    roleDescription: "Detecta la torsión de Küpü antes que nadie, de allí comprende que su deseo impulsivo de 'salvarlo' es otra forma de obstrucción. Demuestra el camino del auto-análisis honesto y la auto-evaluación formativa."
+  },
+  {
+    id: "Luana",
+    name: "Luana",
+    tagline: "La Sucesora Involuntaria",
+    avatarEmoji: "👧🏻",
+    color: "#06b6d4", // Cyan
+    archetype: "Inteligencia Colectiva Contemporánea",
+    roleDescription: "Estudiante de secundaria (17 años, La Pampa, 2026). Experimenta un despertar espontáneo del Campo. Es el puente dialógico para que los alumnos se identifiquen y deba-tan sobre problemas cotidianos e íntimos de comunicación."
+  },
+  {
+    id: "Ernesto",
+    name: "Ernesto",
+    tagline: "El Facilitador de Coherencia",
+    avatarEmoji: "🧑🏻‍🏫",
+    color: "#10b981", // Emerald
+    archetype: "Andamiaje Pedagógico / Coherencia Cardio-Cerebral",
+    roleDescription: "Profesor contemporáneo que coordina el programa con los doce estudiantes de La Pampa. Facilita los ejercicios respiratorios de 15 minutos en sintonía técnica del rantu-külen ancestral."
+  },
+  {
+    id: "Ciro",
+    name: "Ciro",
+    tagline: "El Guía de Alfabetización",
+    avatarEmoji: "🧑🏻‍💻",
+    color: "#ec4899", // Pink
+    archetype: "Alfabetización Digital / Producción Práctica",
+    roleDescription: "Soporte pragmático de herramientas de producción escolar. Recomienda el uso de programas de grabación de audio, software de diseño visual e interactivo para acelerar el laboratorio escolar."
+  }
+];
+
+export const GLOSSARY: GlossaryTerm[] = [
+  {
+    id: "narrativa_transmedia",
+    term: "Narrativa Transmedia (NT)",
+    definition: "Estructura de relato donde el universo narrativo se expande de manera aditiva a través de múltiples soportes de comunicación, donde cada medio realiza una contribución específica, autónoma y valiosa sin redundancias.",
+    relatedTerms: ["Worldbuilding", "Prosumidor", "Fandom", "Nave Nodriza"]
+  },
+  {
+    id: "coherencia_cardio_cerebral",
+    term: "Coherencia Cardio-Cerebral",
+    definition: "Estado fisiológico donde el corazón y el cerebro oscilan coordinadamente y en fase rítmica armónica. Facilita foco intelectual, reducción del estrés y una apertura empática excepcional. Metáfora en el relato: el rantu-külen.",
+    relatedTerms: ["Rantu-külen", "El Campo", "Frecuencia Primera"]
+  },
+  {
+    id: "cant_prosumidor",
+    term: "Prosumidor",
+    definition: "Concepto que fusiona 'productor' y 'consumidor'. En educación transmedia, define al estudiante que deja de ser espectador pasivo de contenidos escolares para investigar, intervenir, crear y reinyectar sus propias piezas (podcast, cómics) al lore de la clase.",
+    relatedTerms: ["Cultura Participativa", "Fandom", "Narrativa Transmedia"]
+  },
+  {
+    id: "rantu_kulen",
+    term: "Rantu-Külen",
+    definition: "Eje místico-somático central de Los Kalhué: la vibración resonante sostenida. Físicamente se percibe en la articulación de la mandíbula con el cráneo, irradiándose por la columna hasta el plexo solar. Simboliza el aprendizaje enactivo.",
+    relatedTerms: ["Coherencia Cardio-Cerebral", "Rantü", "El Campo"]
+  },
+  {
+    id: "el_campo",
+    term: "El Campo de Coherencia",
+    definition: "Estado colectivo superior cuando aumenta la frecuencia de rantu-külen grupal. Las barreras físicas se disuelven perceptivamente, sintonizando ritmos y cooperando de forma no uniforme sino armonizada. Representa el clímax de inteligencia colectiva.",
+    relatedTerms: ["Rantu-külen", "Cultura Participativa", "Coherencia Cardio-Cerebral"]
+  },
+  {
+    id: "epigenetica",
+    term: "Epigenética Narrativa",
+    definition: "Disciplina biológica real que estudia cómo las vivencias y adaptaciones ambientales dejan marcas heredables sin modificar el ADN. Conceptualmente une los actos de Wirün de hace 500 años con la despertar biológica de Luana.",
+    relatedTerms: ["Rantu-Mapu", "Worldbuilding"]
+  },
+  {
+    id: "worldbuilding",
+    term: "Worldbuilding (Urdido de Mundos)",
+    definition: "Práctica meticulosa de diseñar un ecosistema narrativo coherente (reglas naturales, mitología, lenguaje, arquetipos de poder) capaz de aguantar múltiples relatos y extensiones satélites interconectadas coherentes.",
+    relatedTerms: ["Narrativa Transmedia", "Nave Nodriza", "Lore"]
+  },
+  {
+    id: "cultura_participativa",
+    term: "Cultura Participativa",
+    definition: "Ecosistema social caracterizado por bajas barreras para la creación y expresión colectiva, el apoyo informal entre mentores y novicios, y la convicción profunda de que las contribuciones de los miembros individuales son valiosas.",
+    relatedTerms: ["Prosumidor", "Convergencia Cultural"]
+  },
+  {
+    id: "convergencia_cultural",
+    term: "Convergencia Cultural",
+    definition: "Dinámica contemporánea (Jenkins) donde los flujos mediáticos operan horizontalmente, cruzando industrias, y las audiencias adquieren un rol altamente dinámico, empoderado y reticular, desdibujando el modelo clásico de un emisor para muchos receptores.",
+    relatedTerms: ["Alfabetización Mediática", "Cultura Participativa"]
+  }
+];
+
+export const TRANSMEDIA_FORMATS: TransmediaFormat[] = [
+  {
+    id: "podcast_educativo",
+    name: "Podcast Educativo / Narrativo",
+    iconType: "podcast",
+    complexity: "Media",
+    duration: "10-15 minutos por capítulo (producción: 3-5h)",
+    definition: "Archivo de audio digital estructurado por episodios que combina la calidez y cercanía de la voz humana con tramas de expansión sonora oral.",
+    pedagogicalPotential: "Activa la comprensión auditiva profunda, la síntesis conceptual de discursos de argumentación oral y exige guiones literarios de alta fineza escritural.",
+    recommendedTools: ["Audacity", "GarageBand", "Spotify for Podcasters"],
+    skillsInvolved: ["Escritura creativa", "Modulación de voz", "Trabajo cooperativo", "Edición sonora"],
+    advantages: "Induce a la calidez narrativa de Wirün y permite explorar historias en primera persona de Amaru o Tümay de forma asequible con cualquier celular.",
+    limitations: "Requiere espacios con baja contaminación de ruido para garantizar tomas nítidas.",
+    exampleProject: "Voces del Rantü: Podcast donde grupos relatan el diario místico o el diario sonoro de Luana en La Pampa durante sus primeros ejercicios.",
+    evaluationRubric: "Rúbrica de 4 niveles que califica la estructura del guion (25%), modulación de voz y elocuencia (25%), calidad de mezclas sonoras (25%) y fidelidad al canon literario (25%)."
+  },
+  {
+    id: "videoensayo",
+    name: "Videoensayo Académico-Filosófico",
+    iconType: "videoessay",
+    complexity: "Alta",
+    duration: "5-10 minutos (producción: 6-8h)",
+    definition: "Género audiovisual reflexivo que ensambla voz en off con videos explicativos, texto e infografías cinéticas para deconstruir un dilema complejo.",
+    pedagogicalPotential: "Obliga a la transposición de un ensayo argumentativo abstracto convencional a un lenguaje multimedial atractivo, con alto rigor analítico.",
+    recommendedTools: ["CapCut", "InShot", "Canva", "YouTube"],
+    skillsInvolved: ["Pensamiento crítico", "Montaje cinematográfico", "Diseño visual", "Argumentación estructurada"],
+    advantages: "Excelente para el nivel universitario, estimulando debates teóricos profundos sobre la epigenética narrativa o la sombra de Küpü como arquetipo.",
+    limitations: "Curva de aprendizaje superior para edición de flujos visuales rítmicos.",
+    exampleProject: "El Espejo de Küpü: Videoensayo que contrasta el uso ético del conocimiento con la sobreabundancia algorítmica y la IA contemporánea.",
+    evaluationRubric: "Rúbrica para evaluar solidez argumentativa (30%), edición visual y montaje de soporte (30%), articulación estética y ritmo (20%) e impacto de la autocrítica metacognitiva (20%)."
+  },
+  {
+    id: "escape_room",
+    name: "Escape Room Transmedia / ARG",
+    iconType: "escape",
+    complexity: "Muy Alta",
+    duration: "1-2 horas de aplicación escolar (diseño: 2-3 semanas)",
+    definition: "Aventura interactiva gamificada donde los participantes resuelven pistas interconectadas y resuelven desafíos para abrir cerraduras bajo tiempo límite.",
+    pedagogicalPotential: "Propicia el pensamiento lateral, tolerancia a la frustración y la integración transversal de materias en un andamiaje divertido de aventura.",
+    recommendedTools: ["Códigos QR", "Genially", "Google Forms (candados)", "Mensajes de voz de IA"],
+    skillsInvolved: ["Pensamiento abstracto", "Lógica deductiva", "Liderazgo y delegación", "Comunicación inmersiva"],
+    advantages: "Inmersión progresiva máxima. Ideal para vivir el rol de 'aprendices' que deben decodificar las misteriosas piedras del Rantu-Mapu.",
+    limitations: "Demanda mucho planeamiento didáctico previo por parte del docente para que todo encaje sin errores de flujo.",
+    exampleProject: "Las Tabletas Perdidas: ARG donde los grupos encuentran códigos QR físicos en la escuela que disparan mensajes secretos de Wirün.",
+    evaluationRubric: "Criterios: Calidad de los enigmas didácticos planteados (30%), cohesión con la mitología (30%), grado de cooperación intergrupos (20%) y resolución bajo presión (20%)."
+  },
+  {
+    id: "reels_tiktok",
+    name: "Reels / TikTok Educativo",
+    iconType: "reels",
+    complexity: "Baja",
+    duration: "15 segundos a 3 minutos (producción: 1-2h)",
+    definition: "Contenido audiovisual vertical móvil con lenguaje frenético de alto impacto, ritmos visuales veloces e infografías embebidas dinámicas.",
+    pedagogicalPotential: "Desafía a los estudiantes a dominar la máxima síntesis de ideas. Explicar conceptos sofisticados de coherencia en 60 segundos.",
+    recommendedTools: ["Instagram Reels", "TikTok", "CapCut Templates"],
+    skillsInvolved: ["Poder de síntesis", "Comunicatividad fluida", "Alfabetización móvil", "Atractivo visual"],
+    advantages: "Muy cercano a la juventud y el entorno real de los chicos de hoy, como Luana.",
+    limitations: "Riesgo de simplificación excesiva o de dar mayor peso a la estética que al rigor conceptual.",
+    exampleProject: "Semilla del Campo: Desafío de reels de 90 segundos explicando cómo se siente rantu-külen anatómico o los beneficios del biofeedback.",
+    evaluationRubric: "Evalúa: Capacidad de síntesis científica (40%), ritmo acústico e imágenes complementarias (30%), carisma del orador y elocuencia (30%)."
+  },
+  {
+    id: "novela_grafica",
+    name: "Cómic / Novela Gráfica Didáctica",
+    iconType: "comic",
+    complexity: "Media",
+    duration: "2 a 4 páginas (producción: 3-5h)",
+    definition: "Estructura secuencial narrativa estática que fusiona ilustraciones con globos de diálogos, onomatopeyas y cartuchos expositivos.",
+    pedagogicalPotential: "Fomenta la traducción de ideas textuales a códigos espaciales, secuenciación rítmica visual, encuadre cinematográfico y síntesis dialogada.",
+    recommendedTools: ["Canva", "Pixton", "Storyboard That", "Dibujo físico con fotos"],
+    skillsInvolved: ["Narrativa visual", "Diálogo conciso", "Diseño de escenarios", "Expresividad actoral"],
+    advantages: "Altamente estimulante para los alumnos con facilidades gráficas, propiciando puentes con artes visuales.",
+    limitations: "Requiere paciencia para iterar los cuadros manteniendo continuidad estética.",
+    exampleProject: "Crónicas de la Línea Histórica: Cómic que ilustra el día del quiebre místico cuando Küpü comenzó a desviar su frecuencia.",
+    evaluationRubric: "Meticulosidad del guion gráfico / encuadres (30%), expresividad narrativa (30%), calidad de diálogos éticos y sintonía con la novela (40%)."
+  },
+  {
+    id: "web_documental",
+    name: "Webdoc (Documental Interactivo)",
+    iconType: "webdoc",
+    complexity: "Muy Alta",
+    duration: "Navegación libre multilinear (diseño: 4-3 semanas)",
+    definition: "Plataforma digital integrada no lineal que agrupa videos narrativos, pistas de audios de ambiente, mapas de georreferencia y textos.",
+    pedagogicalPotential: "Ejercita la arquitectura de la información avanzada, navegación exploratoria crítica y el diseño de interfaces web dinámicas.",
+    recommendedTools: ["Klynt", "Shorthand", "Wix / Carrd", "Google Sites", "Figma"],
+    skillsInvolved: ["Arquitectura de información", "Edición web", "Curación periodística", "Cartografía interactiva"],
+    advantages: "Permite emular archivos reales con gran suspenso investigativo y verosimilitud de ciencia ficción.",
+    limitations: "Altos conocimientos en ordenamiento de hipertextos y mayor consumo de tiempo.",
+    exampleProject: "El Archivo de Ernesto: Webdoc donde simulan ser detectives que recuperan las notas de biofeedback de los 12 estudiantes en La Pampa.",
+    evaluationRubric: "Evalúa jerarquía de contenidos en el sitio (35%), interactividad de la navegación (25%), profundidad de la investigación de base (25%) y estética cinemática (15%)."
+  }
+];
+
+export const EDUCATIONAL_TOOLBOX: ToolItem[] = [
+  {
+    name: "Audacity",
+    category: "audio",
+    description: "Editor y grabador de audio multipista de código abierto sumamente versátil.",
+    utility: "Excelente para que los alumnos graben y limpien el ruido ambiental en sus proyectos de podcast narrativos sobre los testimonios del círculo.",
+    difficulty: "Moderado",
+    url: "https://www.audacityteam.org/"
+  },
+  {
+    name: "CapCut",
+    category: "edición",
+    description: "Aplicación multiplataforma de edición de video extremadamente potente y ágil con plantillas inteligentes.",
+    utility: "Permite a los estudiantes sincronizar música y superponer diapositivas en videoensayos o reels educativos sobre la epigenética Kalhué.",
+    difficulty: "Fácil",
+    url: "https://www.capcut.com/"
+  },
+  {
+    name: "Genially",
+    category: "storytelling",
+    description: "Herramienta web para crear presentaciones interactivas, infografías animadas y dinámicas de escape-room.",
+    utility: "Ideal para diseñar las pantallas de descifrado secreto de las tabletas Rantu-Mapu con botones ocultos y popups diegéticos.",
+    difficulty: "Fácil",
+    url: "https://www.genially.com/"
+  },
+  {
+    name: "Pixton",
+    category: "animación",
+    description: "Creador de cómics educativos con avatares, poses de personajes, fondos y globos de conversación listos para usar.",
+    utility: "Especial para diagramar la novela gráfica adaptando las líneas temporales místicas (el pueblo de Tümay ancestral con La Pampa 2026).",
+    difficulty: "Fácil",
+    url: "https://www.pixton.com/"
+  },
+  {
+    name: "Notion",
+    category: "gestión",
+    description: "Espacio de trabajo modular todo en uno para documentar notas, organizar bases de datos y cooperar.",
+    utility: "Ideal para estructurar la bitácora de investigación estudiantil simulando el portafolios confidencial de Ernesto.",
+    difficulty: "Moderado",
+    url: "https://www.notion.so/"
+  },
+  {
+    name: "Figma",
+    category: "diseño",
+    description: "Herramienta online de prototipado colaborativo y diseño de interfaces con retroalimentación instantánea.",
+    utility: "Permite a los universitarios de Comunicación trazar las pantallas del Webdoc interconectado o graficar flujos del mapa transmedia.",
+    difficulty: "Avanzado",
+    url: "https://www.figma.com/"
+  },
+  {
+    name: "Mindomo",
+    category: "mapas",
+    description: "Diseñador de mapas mentales y conceptuales con integración de recursos multimedia.",
+    utility: "Útil para estructurar la red relacional del glosario avanzado y mapear las conexiones biológicas y éticas del Campo.",
+    difficulty: "Fácil",
+    url: "https://www.mindomo.com/"
+  },
+  {
+    name: "Twine",
+    category: "storytelling",
+    description: "Herramienta de código abierto para dar forma a historias interactivas, no lineales y ramificadas basadas en hipertextos.",
+    utility: "Perfecto para el proyecto de ética 'La Ética del Campo'; permite codificar los 4 caminos morales de Luana con repercusiones inmediatas.",
+    difficulty: "Moderado",
+    url: "https://twinery.org/"
+  }
+];
+
+export const MODEL_PROJECTS: SavedProject[] = [
+  {
+    id: "tabletas_perdidas",
+    theme: "El descifrado ancestral y las misiones transmedia",
+    subject: "Lengua, Tecnología y Arte",
+    level: "Secundaria Básica (2do y 3er año)",
+    duration: "3 semanas",
+    primaryFormat: "Escape Room / ARG",
+    createdAt: "Modelo Precargado",
+    plan: {
+      proposalTitle: "Proyecto «Las Tabletas Perdidas» — Escape Room ARG",
+      narrativeHook: "Los alumnos reciben un inquietante mensaje sonoro (simulando la voz grabada de Wirün de hace cinco siglos) avisando que tres tabletas sagradas del Rantu-Mapu han desaparecido de la cámara subterránea de La Pampa y se requiere de aprendices para evitar que el círculo caiga en la torsión ética de Küpü.",
+      pedagogicalValue: "Detona el pensamiento analítico lateral, andamia el cooperativismo y entrena la tolerancia a la frustración integrando la curación de contenidos.",
+      curriculumIntegration: "Articula curricularmente la redacción y argumentación en Lengua, la creación técnica en Tecnología y la diagramación visual en Arte.",
+      sequence: [
+        {
+          week: 1,
+          title: "Sintonización & Tableta III (Fase Sonoridad)",
+          description: "La primera pista (un audio que simula la voz de Wirün) convoca a la búsqueda. Revelan la Tableta III.",
+          studentActivities: "Grabar cooperativamente un podcast rotativo de 5 minutos debatiendo sobre la convivencia escolar y lo que el cuerpo experimenta al dejar de ser frontera territorial.",
+          teacherGuidance: "Actúa como Ernesto: les entrega la pista sonora y guía la sintonización somática grupal previa.",
+          recommendedTools: ["Spotify / Audacity"]
+        },
+        {
+          week: 2,
+          title: "La Tableta VI (Mapa del Círculo de Frecuencias)",
+          description: "Un código QR pegado físicamente en los casilleros del aula lleva a un video secreto mostrando la Tableta VI mística.",
+          studentActivities: "Levantar un mapa interactivo georreferenciando el aula y la fisonomía del colegio como un círculo coordinado de frecuencias del Campo, analizando las tensiones de Valentina o Nico.",
+          teacherGuidance: "Como Amaru: alienta a que cada estudiante examine críticamente sus aportes individuales y su posición en el grupo.",
+          recommendedTools: ["Mindomo (Mapas)", "Genially"]
+        },
+        {
+          week: 3,
+          title: "La Tableta XI (El Debate del Límite de la Torsión)",
+          description: "El asistente místico de la plataforma IA entrega en misteriosa prosa la última pista de la Tableta XI sobre la profecía del desvío.",
+          studentActivities: "Filmar un debate argumentativo de 6 minutos poniéndose en la piel de Küpü contra Wirün, definiendo si es lícito hackear datos sensoriales del Campo.",
+          teacherGuidance: "Favorece la co-evaluación grupal y organiza el plenario final con la resolución del misterio.",
+          recommendedTools: ["CapCut", "YouTube / Google Drive"]
+        }
+      ],
+      evaluationRubric: {
+        criteria: [
+          "Cohesión y juego interpretativo (25%)",
+          "Calidad en los entregables transmedia (35%)",
+          "Argumentación didáctica sobre convivencia (25%)",
+          "Dinámica de ayuda y auto-revisión (15%)"
+        ],
+        scoringGuide: "Puntaje máximo de excelencia si logran entregar los tres formatos en sintonía con el universo y resolver el escape grupal."
+      },
+      transmediaExpansion: "Al resolver el ARG, se desbloquea en la plataforma un dossier con fragmentos inéditos de la novela sobre el destino del círculo."
+    }
+  },
+  {
+    id: "archivo_ernesto",
+    theme: "Coherencia Cardio-Cerebral, Neurociencia y Epigenética”,",
+    subject: "Ciencias Sociales, Biología y Comunicación",
+    level: "Secundaria Superior o Universitario",
+    duration: "4-5 semanas",
+    primaryFormat: "Webdoc / Documental Interactivo",
+    createdAt: "Modelo Precargado",
+    plan: {
+      proposalTitle: "Proyecto «Archivo del Programa Ernesto» — Webdoc",
+      narrativeHook: "Los estudiantes actúan en rol de historiadores o investigadores contemporáneos que se han tropezado en un servidor descartado con el portafolio confidencial de biofeedback de Ernesto. Deben reconstruir, ordenar y presentar el archivo de forma pública.",
+      pedagogicalValue: "Entrena la curación de información sofisticada, la jerarquía visual informática y estimula un diálogo transdisciplinar de gran calado entre humanidades y ciencias duras.",
+      curriculumIntegration: "Ensambla biología y medicina (epigenética celular real, variabilidad cardíaca rítmica) con sociología crítica (dinámicas de grupo en La Pampa del siglo XXI).",
+      sequence: [
+        {
+          week: 1,
+          title: "Análisis del Hallazgo & Distribución de Roles",
+          description: "Presentación del caso de simulación e inmersión en la geografía física de La Pampa.",
+          studentActivities: "Elegir roles complementarios de inteligencia colectiva (Curadores, Programadores web, Diseñadores de audio, Investigadores biólogos). Sintonizar con el tema.",
+          teacherGuidance: "Actúa como facilitador socrático, desafiando a los chicos con interrogantes sobre el límite de la ciencia.",
+          recommendedTools: ["Notion", "Figma"]
+        },
+        {
+          week: 2,
+          title: "Periodismo Diegético & Diálogos",
+          description: "Fase de redacción y orquestación de entrevistas falsas creadas por ellos con los personajes de Valentina, Mateo y Nico.",
+          studentActivities: "Escribir los guiones, inventando los audios y las transcripciones de las sesiones terapéuticas de Ernesto.",
+          teacherGuidance: "Incentiva a los alumnos a estudiar los perfiles psicológicos de Valentina (cansada) y Nico (ansioso) de la novela.",
+          recommendedTools: ["Google Docs", "Audacity"]
+        },
+        {
+          week: 3,
+          title: "Investigación Científica de la Epigenética",
+          description: "Búsqueda bibliográfica rigurosa sobre cómo el estrés o la meditación reescriben los marcadores del genoma sin alterar la hélice de ADN.",
+          studentActivities: "Crear reportes, infografías sismológicas y comparaciones científicas cruzando el Campo con datos reales de neurociencia.",
+          teacherGuidance: "Como Wirün: recuerda la importancia del rigor antes de emitir afirmaciones de sintonización científica.",
+          recommendedTools: ["Mindomo (Mapas)", "Canva"]
+        },
+        {
+          week: 4,
+          title: "Ensamblado de la Interfaz Webdoc",
+          description: "Maquetación del sitio digital interactivo y pruebas cruzadas de usabilidad y ritmo.",
+          studentActivities: "Volcar todos los recursos (audios de sesiones, mapas locales, diagramas teóricos) dentro de un portal de libre navegación fluida.",
+          teacherGuidance: "Andamia las dificultades técnicas en diseño de flujos informáticos junto con Ciro.",
+          recommendedTools: ["Figma", "Carrd / Google Sites"]
+        },
+        {
+          week: 5,
+          title: "Apertura Pública & Metacognición",
+          description: "Lanzamiento y socialización del Webdoc terminado con fines de democratización intelectual.",
+          studentActivities: "Exponer el sitio, reflexionar grupalmente sobre el conocimiento heredado y autoevaluarse.",
+          teacherGuidance: "Utiliza la rúbrica auténtica para sancionar el grado de meticulosidad científica y comunicativa.",
+          recommendedTools: ["Google Sites", "Shorthand"]
+        }
+      ],
+      evaluationRubric: {
+        criteria: [
+          "Arquitectura de información interactiva (30%)",
+          "Rigor de biología en epigenética real (30%)",
+          "Creatividad en el periodismo dramático (25%)",
+          "Estilo visual coherente contemporáneo (15%)"
+        ],
+        scoringGuide: "Calificación máxima si el Webdoc es verdaderamente autónomo, navegable y ofrece enlaces bibliográficos certeros de neurobiología."
+      },
+      transmediaExpansion: "Un grupo puede programar de forma paralela un clon conversacional de Ernesto para responder dudas de salud mental cardio-cerebral en el foro."
+    }
+  }
+];

@@ -1,0 +1,6 @@
+{
+  "name": "Los Kalhué",
+  "description": "Plataforma Transmedia Educativa Inteligente basada en el universo de Los Kalhué para el diseño, consulta y planificación de experiencias de aprendizaje inmersivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
